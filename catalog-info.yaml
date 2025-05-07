@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nsxx2fsqt-java-springboot-gitops
+  description: This is GitOps manifest for nsxx2fsqt-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=nsxx2fsqt-java-springboot
+    backstage.io/kubernetes-id: nsxx2fsqt-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nsxx2fsqt-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nsxx2fsqt-java-springboot
